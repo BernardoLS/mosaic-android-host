@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.bernardols.mosaic.data.AppInfoRepository
+import com.bernardols.mosaic.feature.profile.presentation.ProfileScreen
 import com.bernardols.mosaic.ui.theme.MosaicTheme
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -27,30 +28,8 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
-            MosaicTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
-            }
+            ProfileScreen()
+
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MosaicTheme {
-        Greeting("Android")
     }
 }

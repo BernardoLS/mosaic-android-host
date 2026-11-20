@@ -25,3 +25,5 @@ dependencyResolutionManagement {
 rootProject.name = "Mosaic"
 include(":app")
 include(":core")
+include(":feature:profile")
+project(":feature:profile").projectDir = file("feature/profile")
